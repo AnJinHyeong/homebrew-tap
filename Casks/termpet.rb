@@ -10,13 +10,14 @@ cask "termpet" do
   desc "Menu bar desktop pet that tells you when Claude Code or long terminal commands finish"
   homepage "https://github.com/AnJinHyeong/TermPet"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "TermPet.app"
 
   # 개인용 ad-hoc 서명 앱이라 Apple 공증이 없다 → 다운로드 격리 표시를 지워야 "손상됨" 경고 없이 열린다
-  postflight do
-    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/TermPet.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/TermPet.app"],
+                          writable_paths: ["TermPet.app"], writable_base: :appdir
   end
 
   uninstall quit: "com.termpet.TermPet"
