@@ -1,6 +1,7 @@
 # Homebrew Tap
 
 ```bash
+brew trust anjinhyeong/tap                           # 처음 한 번 (Homebrew 7+)
 brew install --cask anjinhyeong/tap/termpet          # 설치
 brew update && brew upgrade --cask termpet           # 업데이트
 brew uninstall --cask termpet                        # 삭제 (설정까지 지우려면 --zap)
