@@ -1,8 +1,8 @@
 # 텀펫 설치:  brew install --cask anjinhyeong/tap/termpet
 # version / sha256 은 TermPet 저장소의 Scripts/release.sh 가 자동으로 갱신한다.
 cask "termpet" do
-  version "0.5.1"
-  sha256 "0a5ccf4cc054cdcdd8b3bef63860f8b875fe9e9c2a1da56df1829e82b554ced3"
+  version "0.5.2"
+  sha256 "a45d9c99a3578603dc2ca3f2f0a78b3aee8c162cb174d16e7e623039d1022d15"
 
   url "https://github.com/AnJinHyeong/TermPet/releases/download/v#{version}/TermPet-#{version}.zip"
   name "텀펫"
